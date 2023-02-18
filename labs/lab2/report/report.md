@@ -105,11 +105,75 @@ header-includes:
 
 2. Построим траектории движения катера береговой охраны и лодки с помощью Julia  (@fig:005 - @fig:007).
 
-![Код для построения траекторий движения лодки и катера](image/2.png){#fig:002 width=70%}
+Код: 
+
+using Plots
+using DifferentialEquations
+const a = 18.9
+const n = 5.5
+
+const r0 = a/(n+1)
+const r0_1 = a/(n-1)
+
+const T = (0, 2*pi)
+const T_1 = (-pi, pi)
+
+function F(u,p,t)
+    return u/sqrt(n*n-1)
+end
+
+problem = ODEProblem(F, r0, T)
+
+res = solve(problem, abstol = 1e-6, reltol= 1e-6)
+@show res.u
+@show res.t 
+
+dxr = rand(1:size(res.t)[1])
+rAngles = [res.t[dxr] for i in 1:size(res.t)[1]]
+
+plt = plot(proj=:polar, aspect_ratio=:equal, dpi = 1200, legend=true, bg=:white)
+
+#параметры для холста
+plot!(plt, xlabel="theta", ylabel="r(t)", title="Кривая погони", legend=:outerbottom)
+
+plot!(plt, [0.0,0.0], [a, r0], label = "Начальное движение", color=:blue, lw=0.2)
+scatter!(plt, [0.0], [a], label="", mc=:blue, ms=0.2)
+
+plot!(plt, [rAngles[1], rAngles[2]], [0.0, res.u[size(res.u)[1]]], label="Путь лодки", color=:green, lw=0.2)
+scatter!(plt, rAngles, res.u, label="", mc=:green, ms=0.005)
+
+plot!(plt, res.t, res.u, xlabel="theta", ylabel="r(t)", label="Путь катера", color=:red, lw=0.2)
+scatter!(plt, res.t, res.u, label="", mc=:red, ms=0.005)
+
+savefig(plt, "lab2_1.png")
+
+problem = ODEProblem(F, r0_1 , T_1)
+res = solve(problem, abstol=1e-8, reltol=1e-8)
+dxR = rand(1:size(res.t)[1])
+rAngles = [res.t[dxR] for i in 1:size(res.t)[1]]
+
+#xoлст2
+plt1 = plot(proj=:polar, aspect_ratio=:equal, dpi = 1200, legend=true, bg=:white)
+
+
+plot!(plt1, xlabel="theta", ylabel="r(t)", title="Кривая погони", legend=:outerbottom)
+
+plot!(plt1, [0.0,0.0], [a, r0], label = "Начальное движение", color=:blue, lw=0.3)
+scatter!(plt1, [0.0], [a], label="", mc=:blue, ms=0.3)
+
+plot!(plt1, [rAngles[1], rAngles[2]], [0.0, res.u[size(res.u)[1]]], label="Путь лодки", color=:green, lw=0.3)
+scatter!(plt1, rAngles, res.u, label="", mc=:green, ms=0.005)
+
+plot!(plt1, res.t, res.u, xlabel="theta", ylabel="r(t)", label="Путь катера", color=:red, lw=0.3)
+scatter!(plt1, res.t, res.u, label="", mc=:red, ms=0.005)
+
+savefig(plt1, "lab2_2.png")
+
 
 ![Траектория движения лодки и катера в случае 1](image/3.png){#fig:003 width=70%}
 
 ![Траектория движения лодки и катера в случае 2](image/4.png){#fig:004 width=70%}
+
 
 3. Построение траекторий с помощью языка OpenModelica не имеет смысла, так как это невозможно сделать, используя стандартные методы.
 
