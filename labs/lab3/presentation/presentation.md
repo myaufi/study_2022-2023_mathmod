@@ -7,7 +7,6 @@ author:
   - Егорова Д. В
 institute:
   - Российский университет дружбы народов, Москва, Россия
-  - Объединённый институт ядерных исследований, Дубна, Россия
 date: 25.02.2023
 
 ## i18n babel
@@ -21,6 +20,10 @@ slide_level: 2
 aspectratio: 169
 section-titles: true
 theme: metropolis
+mainfont: PT Serif 
+romanfont: PT Serif 
+sansfont: PT Sans
+monofont: PT Mono
 header-includes:
  - \metroset{progressbar=frametitle,sectionpage=progressbar,numbering=fraction}
  - '\makeatletter'
@@ -36,7 +39,7 @@ header-includes:
 ::: {.column width="70%"}
 
   * Егорова Диана Витальевна
-  * студен НФИбд-01-20
+  * студент НФИбд-01-20
   * Российский университет дружбы народов
   * [1032201662@pfur.ru](mailto:1032201662@pfur.ru)
 
