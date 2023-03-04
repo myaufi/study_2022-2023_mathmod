@@ -40,11 +40,6 @@ header-includes:
   * [1032201662@rudn.ru](mailto:1032201662@rudn.ru)
 
 :::
-::: {.column width="30%"}
-
-![](./image/kulyabov.jpg)
-
-:::
 ::::::::::::::
 
 # Вводная часть
