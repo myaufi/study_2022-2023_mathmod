@@ -121,35 +121,35 @@ $I(0)$ и $S(0)$
 
 Напишем код программы на Julia (рис. @fig:001).
 
-![Код для первого случая на Julia](image/1.jpg){#fig:001 width=70%}
+![Код для первого случая на Julia](image/1.png){#fig:001 width=70%}
 
 В результате получаем следующий график (рис. @fig:002).
 
-![](image/2.jpg){#fig:002 width=70%}
+![](image/2.png){#fig:002 width=70%}
 
 Напишем код для второй программы на Julia (рис. @fig:003).
 
-![Код для второго случая на Julia](image/3.jpg){#fig:003 width=70%}
+![Код для второго случая на Julia](image/3.png){#fig:003 width=70%}
 
 В результате получаем следующий график (рис. @fig:004).
 
-![](image/4.jpg){#fig:004 width=70%}
+![](image/4.png){#fig:004 width=70%}
 
 Напишем код программы в OpenModelica (рис. @fig:005).
 
-![Код для первого случая в OpenModelica](image/5.jpg){#fig:005 width=70%}
+![Код для первого случая в OpenModelica](image/5.png){#fig:005 width=70%}
 
 В результате получаем следующий график (рис. @fig:006).
 
-![](image/6.jpg){#fig:006 width=70%}
+![](image/6.png){#fig:006 width=70%}
 
 Напишем код программы для второго случая в OpenModelica (рис. @fig:007).
 
-![Код для второго случая в OpenModelica](image/7.jpg){#fig:007 width=70%}
+![Код для второго случая в OpenModelica](image/7.png){#fig:007 width=70%}
 
 В результате получаем следующий график (рис. @fig:008).
 
-![](image/8.jpg){#fig:008 width=70%}
+![](image/8.png){#fig:008 width=70%}
 
 # Выводы
 
